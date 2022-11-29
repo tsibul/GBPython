@@ -32,6 +32,8 @@ def find_decimal(num):
 
 print_task_no(5)
 
+# Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+
 
 def to_directions_fibonacci(num):
     fib = {-2: -1, -1: 1, 0: 0, 1: 1}
@@ -48,8 +50,6 @@ arr = dict(sorted(to_directions_fibonacci(fib_len).items()))
 print(arr.values())
 
 
-
-quit()
 # Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 
 print_task_no(4)
