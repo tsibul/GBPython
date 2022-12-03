@@ -30,6 +30,36 @@ def nilakant_element(number):
         sign = -1
     element = sign * 4 / (number * (number + 1) * (number + 2))
     return element
+# Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
+
+def eratosphen_table(size):
+    initial_table = [True] * (size + 1)
+    initial_table[0] = False
+    initial_table[1] = False
+    for i in range(2, size + 1):
+        if initial_table[i]:
+            j = 2
+            while i*j <= size:
+                initial_table[i*j] = False
+                j = j + 1
+    prime_table = []
+    for i in range(len(initial_table)):
+        if initial_table[i]:
+            prime_table.append(i)
+    return prime_table
+
+number = something_input('int', 'input number: ')
+primes = eratosphen_table(number)
+factors = []
+for item in primes:
+    while number % item == 0:
+        number = number / item
+        factors.append(item)
+print(factors)
+check = 1
+for smth in factors:
+    check *= smth
+print(check)
 
 # Задана натуральная степень k. Сформировать случайным образом список коэффициентов
 # (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
