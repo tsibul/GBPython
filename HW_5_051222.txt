@@ -1,0 +1,4 @@
+HW_5_051222.py - код
+hw5_2_in.txt, l5_2.txt - входные данные
+
+https://github.com/tsibul/GBPython.git
