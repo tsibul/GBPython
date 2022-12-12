@@ -1,0 +1,50 @@
+Создать калькулятор для работы с рациональными и комплексными числами, организовать меню,
+   добавив в неё систему логирования.
+
+В рамках этого обсуждения студентам надо нарисовать “архитектуру”
+     (например, в виде блок-схемы) для работы данного приложения.
+
+
+calculations.py - вычисления
+    def sum_c = +
+    def sub_c = -
+    def mult_c = *
+    def div_c = /
+    calculation(num1, fun, num2):
+        return fun(num1, num2)
+
+ui.py - ввод
+    def input_c (float)
+            вводим строку вида -56 * 112
+            на выходе получаем лист [num1, fun, num2]
+
+            arr = string.split()
+
+    def output_c
+
+checks.py
+     def check_action(fun)
+        return calc_name
+     def check_c
+        print('екорректный ввод')
+        return True/False
+            проверяет на корректность ввода
+
+log.py
+    def log(string)
+        with open ('logfile.txt', 'a+') as log:
+            log.write(string)
+
+controller.py
+   input => [ num1, fun, num2]
+   log
+   while(not check_c)
+       input
+       log
+   check_action()
+   calculation(calc_name, num1, num2)
+   log
+   output
+
+
+main.py

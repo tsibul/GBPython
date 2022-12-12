@@ -10,8 +10,9 @@ def check_action(func):
 
 
 def check_c(func):
-    if func[0].isdigit and func[2].isdigit:
+    if func[0].isdigit() and func[2].isdigit():
         return True
     else:
         print("Некорректный ввод")
-    return False
+        return False
+

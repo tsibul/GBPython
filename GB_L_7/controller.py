@@ -7,7 +7,7 @@ inp_list = input_c()
 logstr = ';' + 'input' + ';' + str(inp_list)
 log(logstr)
 while not check_c(inp_list):
-    inp_list = input_c
+    inp_list = input_c()
     logstr = ';' + 'input' + ';' + str(inp_list)
     log(logstr)
 func = check_action(inp_list)
