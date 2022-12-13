@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+</head>
+<body>
+<div><input type="text" id="input"  style="width: 77mm; height: 12mm" disabled></div>
+<br>
+<div>
+  <span>
+  <button type="button" style="width: 39mm; height: 12mm" onclick="clearAll();">&nbsp;C&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="onBack();">&nbsp;<&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="onDiv()">&nbsp;/&nbsp;</button>
+  </span>
+</div>
+
+<div>
+  <span>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('7');">&nbsp;7&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('8');">&nbsp;8&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('9');">&nbsp;9&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="onMult()">&nbsp;*&nbsp;</button>
+  </span>
+</div>
+<div>
+  <span>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('4');">&nbsp;4&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('5');">&nbsp;5&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('6');">&nbsp;6&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="onMinus();">&nbsp;-&nbsp;</button>
+  </span>
+</div>
+<div>
+  <span>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('1');">&nbsp;1&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('2');">&nbsp;2&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('3');">&nbsp;3&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="onPlus();">&nbsp;+&nbsp;</button>
+  </span>
+</div>
+<div>
+  <span>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="plusminusInput();">&nbsp;+/-&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="numInput('0');">&nbsp;0&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="commaInput();">&nbsp;.&nbsp;</button>
+  <button type="button" style="width: 19mm; height: 12mm" onclick="equalTo();">&nbsp;=&nbsp;</button>
+  </span>
+</div>
+
+<br>
+
+<input type="text" id="num1" hidden>
+<input type="text" id="oper" hidden>
+
+
+<script>
+  function numInput(a){
+    document.getElementById('input').value += a;
+  }
+
+  function commaInput(){
+    if(!document.getElementById('input').value.includes('.')){
+    document.getElementById('input').value += '.';}
+  }
+
+  function plusminusInput() {
+    if (document.getElementById('input').value.startsWith('-')) {
+      document.getElementById('input').value = document.getElementById('input').value.slice(1, document.getElementById('input').value.length);
+    } else {
+      document.getElementById('input').value = '-' + document.getElementById('input').value;
+    }
+  }
+
+  function clearAll(){
+    document.getElementById('input').value = '';
+    document.getElementById('num1').value = '';
+    document.getElementById('oper').value = '';
+  }
+
+  function onOper(oper){
+    if(document.getElementById('input').value != ''){
+      if(document.getElementById('num1').value == ''){
+        document.getElementById('num1').value = document.getElementById('input').value;
+        document.getElementById('input').value = '';
+      }
+      else{equalTo()}
+    }
+  }
+
+  function equalTo(){
+    if(document.getElementById('input').value !='' && document.getElementById('num1').value != '' &&
+     document.getElementById('oper').value != ''){
+      if(document.getElementById('oper').value == '+'){
+        document.getElementById('input').value = Number(document.getElementById('num1').value) +
+                                                 Number(document.getElementById('input').value);
+      }
+      else if(document.getElementById('oper').value == '-'){
+        document.getElementById('input').value = Number(document.getElementById('num1').value) -
+                                                 Number(document.getElementById('input').value);
+      }
+      else if(document.getElementById('oper').value == '*'){
+        document.getElementById('input').value = Number(document.getElementById('num1').value) *
+                                                 Number(document.getElementById('input').value);
+      }
+      else if(document.getElementById('oper').value == '/' && document.getElementById('input').value != '0'){
+        document.getElementById('input').value = Number(document.getElementById('num1').value) /
+                                                 Number(document.getElementById('input').value);
+      }
+      document.getElementById('num1').value = '';
+      document.getElementById('oper').value = '';
+    }
+
+  }
+
+  function onBack(){
+    if(document.getElementById('input').value != '') {
+      document.getElementById('input').value = document.getElementById('input').value.slice(0,
+                                                                    document.getElementById('input').value.length - 1);
+    }
+  }
+
+  function onPlus(){
+    onOper();
+    document.getElementById('oper').value = '+'
+  }
+
+  function onMinus(){
+    onOper();
+    document.getElementById('oper').value = '-'
+  }
+
+    function onMult(){
+    onOper();
+    document.getElementById('oper').value = '*'
+  }
+
+    function onDiv(){
+    onOper();
+    document.getElementById('oper').value = '/'
+  }
+
+
+</script>
+
+</body>
+</html>
