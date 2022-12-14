@@ -7,9 +7,9 @@ def input_row():
                            '\n\t0 - ввод с клавиатуры '
                            '\n\t1 - ввод из файла\n')
     if choosen_source == 0:
-        return input_console()
+        return input_console
     elif choosen_source == 1:
-        return input_file()
+        return input_file
 
 
 def input_console():
@@ -61,3 +61,5 @@ def input_menu_item() -> int:
         else:
             print("Введите пункт меню заново\n")
             uncurrect = True
+
+input_row()
