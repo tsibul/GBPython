@@ -6,10 +6,10 @@ def input_row():
     choosen_source = input('Для выбора способа ввода данных, введите: '
                            '\n\t0 - ввод с клавиатуры '
                            '\n\t1 - ввод из файла\n')
-    if choosen_source == 0:
-        return input_console
-    elif choosen_source == 1:
-        return input_file
+    if choosen_source == '0':
+        return input_console()
+    elif choosen_source == '1':
+        return input_file()
 
 
 def input_console():
