@@ -1,6 +1,8 @@
 # backend user menu + check call the menu
 # from outputs import print_menu
 
+import controller
+
 menu = \
     {
         '1': 'Ввод', 
