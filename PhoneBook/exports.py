@@ -86,15 +86,3 @@ def export_html(arr):
         file.writelines(f'</html>')
             
     print(f"Экспорт файла {name_file}.html завершен.")
-
-
-user_unput = export_file()
-
-if user_unput == '1':
-    export_csv(arr)
-
-elif user_unput == '2':
-    export_xml(arr)
-
-else:
-    export_html(arr)
