@@ -1,13 +1,3 @@
-
-'''
-exports.py
-def export_file - спрашивает формат файла 1 - csv, 2 - xml, 3 - html
-и вызывает соответствующую функцию	
-def export_csv(arr) экспорт в csv файл 
-def export_xml(arr) экспорт в xml файл 
-def export_html(arr) экспорт в html файл
-'''
-
 import os
 os.chdir(os.path.dirname(__file__))
 from xml.etree import ElementTree as ET
