@@ -36,7 +36,7 @@ def input_index() -> int:
     uncorrect = True
     while uncorrect:
         row_numb = int(input('Введите номер требуемой записи'))
-        if row_numb <= len(input_file()):
+        if 0 < row_numb <= len(input_file()):
             uncorrect = False
             return row_numb
         else: print('Warning! Inputed Index Is Out Of Range\nTry Again')
@@ -55,7 +55,7 @@ def input_menu_item() -> int:
     uncorrect = True
     menu_item = int(input('Введите пункт меню\n'))
     while uncorrect:
-        if menu_item <= MENU_ITEMS:
+        if 0 < menu_item <= MENU_ITEMS:
             uncurrect = False
             return menu_item
         else:
