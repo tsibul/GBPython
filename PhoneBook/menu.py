@@ -1,7 +1,5 @@
 # backend user menu + check call the menu
-# from outputs import print_menu
-
-import controller
+from outputs import print_menu
 
 menu = \
     {

@@ -1,6 +1,6 @@
 # функции правок
 
-# import controller
+from outputs import print_menu
 
 # lst для проверки кода
 # list_my = [['surname' , 'name', 'phone' , 'notes'], ['surname2' , 'name2', 'phone2' , 'notes2'], ['surname3' , 'name3', 'phone3' , 'notes3']]
@@ -60,6 +60,6 @@ def update_row(index, arr):
     arr.insert(index, sub_lst)
     return arr
     
-print(list_my)
-new_list = edit(1, list_my)
-print(new_list)
+# print(list_my)
+# new_list = edit(1, list_my)
+# print(new_list)

@@ -1,0 +1,53 @@
+какое корявое дз
+
+где данные брать?
+
+структура справочника arr:
+[{surname:..., name: ..., phone: ..., notes: ...}, [], []]
+или
+[['surname' , 'name', 'phone' , 'notes'], [...], [...]
+
+хорошо бы, чтобы кто-то заготовил эксель файл заполненный хоть чем-то
+
+
+inputs.py
+def input_row - спрашивает вводим с клавиатуры (0) или из файла (1) и вызывает
+		соответствующую функцию. 
+def input_console - добавить запись с клавиатуры //return arr
+def input_file(arr) - добавить запись из csv файла (каждая запись на своей строке,
+		разделитель ";") пробел не годится так как в описании
+		могут быть пробелы.
+		должен спросить из какого файла брать данные.
+		// return arr
+def input_index(arr, index) - ввести поисковый индекс int[0:len(arr)]
+		проверить входит ли в диапазон // return index
+def input_string - ввести строку // return string
+def input_menu_item - ввести пункт меню // return int
+
+exports.py
+def export_file - спрашивает формат файла 1 - csv, 2 - xml, 3 - html
+		  и вызывает соответствующую функцию	
+def export_csv(arr) экспорт в csv файл 
+def export_xml(arr) экспорт в xml файл 
+def export_html(arr) экспорт в html файл 
+
+outputs.py
+def show_all(arr) - вывести на экран все записи
+def show_by_index(arr, index) - вывести на экран запись с определенным номером
+			// return ['surname' , 'name', 'phone' , 'notes']
+def show_by_filter(arr, string) - вывести все записи, где в любом 
+			поле встречается строка //return zip([filtered_arr][indexes])
+
+edits.py
+def update_row(index, arr) - редактирование (замена записи с определенным индексом)
+def delete_row(index, arr) - удаление записи с определенным индексом)
+
+menu.py
+словарь меню
+{1: Ввод, 2: Редактирование, 3: Экспорт, 4: Поиск, 5: далить, 6: Изменить, 7: Выйти}
+ 
+def change_menu_position - проверяет
+		возможность перехода по меню // return menu_position
+def print_menu - печатает меню
+
+controller.py

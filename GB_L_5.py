@@ -56,7 +56,7 @@ print(*arr)
 #    [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
 
 
-array = [1, 5, 2, 3, 4, 9, 6, 1, 6, 7, 8, 10]
+array = [1, 5, 2, 3, 4, 9, 6, 1, 6, 7, 8, 10, 10]
 
 length = len(array)
 spread_collection = {}
@@ -74,13 +74,13 @@ for i in range(length):
                 tmp_small_item = small_item.copy()
                 tmp_small_item.append(array[j])
                 spread_collection[j].append(tmp_small_item)
+
 tmp_length = 0
 for v in spread_collection:
     print(v, spread_collection[v])
     for item in spread_collection[v]:
         if len(item) > tmp_length:
-            tmp_arr = []
-            tmp_arr.append(item)
+            tmp_arr = [item]
             tmp_length = len(item)
         elif len(item) == tmp_length:
             tmp_arr.append(item)

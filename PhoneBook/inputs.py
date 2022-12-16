@@ -62,4 +62,3 @@ def input_menu_item() -> int:
             print("Введите пункт меню заново\n")
             uncurrect = True
 
-input_row()
