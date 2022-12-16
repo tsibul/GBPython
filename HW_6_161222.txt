@@ -1,0 +1,4 @@
+HW_6_161222.py, My_lib.py - код
+polynom1.txt, - входные данные
+
+https://github.com/tsibul/GBPython.git
