@@ -24,8 +24,8 @@ def input_file():
     with open(source_path, 'r', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile, delimiter=';', skipinitialspace=False)
         data_list_file = []
-        for line,row  in enumerate(file_reader):
-            if line>1:
+        for line, row in enumerate(file_reader):
+            if line > 1:
                 file_reader_to_list = (';'.join(row)).split(';')
                 data_list_file.append(file_reader_to_list[1:])
         return data_list_file
@@ -62,4 +62,3 @@ def input_menu_item() -> int:
             print("Введите пункт меню заново\n")
             uncurrect = True
 
-input_row()
